@@ -6,8 +6,8 @@
     <title>YaSsenger — общий мессенджер</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Все стили (космическая тема, чат, уведомления) – вставьте полный CSS отсюда: 
-           https://github.com/ваш-репозиторий/raw/main/style.css или скопируйте из предыдущих ответов */
+        /* Полный CSS из предыдущего сообщения (все стили) – для краткости я его не дублирую, но вы скопируйте его из моего предыдущего ответа. 
+           Если хотите, я могу приложить полный CSS ещё раз. Напишите, если нужно. */
         * { box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
         body { margin:0; background: radial-gradient(circle at 20% 30%, #0a0f2a, #030617); color:#f0f0ff; min-height:100vh; display:flex; align-items:center; justify-content:center; position:relative; overflow-x:hidden; }
         body::before { content:''; position:fixed; top:0; left:0; width:100%; height:100%; background-image:radial-gradient(2px 2px at 20px 30px,#fff,rgba(0,0,0,0)),radial-gradient(1px 1px at 80px 120px,#ffe6b3,rgba(0,0,0,0)),radial-gradient(1.5px 1.5px at 200px 300px,#ffb3ff,rgba(0,0,0,0)); background-size:200px 200px,150px 150px,300px 300px; background-repeat:repeat; opacity:0.4; pointer-events:none; z-index:0; }
@@ -79,10 +79,9 @@
 
 <script>
     // ========== КЛИЕНТ ДЛЯ РАБОТЫ С УДАЛЁННЫМ API ==========
-    // ВАЖНО: замените этот адрес на реальный URL вашего сервера на Render
-    const API_BASE = 'https://ВАШ_АДРЕС_СЕРВЕРА.onrender.com/api';
+    // ⚠️ ЗАМЕНИТЕ ЭТОТ АДРЕС НА РЕАЛЬНЫЙ URL ВАШЕГО СЕРВЕРА НА CYCLIC
+    const API_BASE = 'https://ВАШ_АДРЕС_СЕРВЕРА.cyclic.app/api';
 
-    // --- Вспомогательные функции (идентичны предыдущим) ---
     function escapeHtml(str) { if (!str) return ''; return str.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m] || m)); }
 
     function showToast(message, type = 'info') {
